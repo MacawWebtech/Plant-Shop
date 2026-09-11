@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /documentation/
+
+Sitemap: https://www.fernleighandco.example/sitemap.xml
