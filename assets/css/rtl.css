@@ -1,0 +1,57 @@
+/* =====================================================================
+   assets/css/rtl.css
+   Activated by <html dir="rtl">. Handles the cases style.css's logical
+   properties (margin-inline, inset-inline-start, border-inline-start,
+   text-align:start, etc.) don't already cover on their own — mirrored
+   compositions, directional icons, and a few physical-property leftovers.
+   Compatible with Arabic and Hebrew layouts.
+   ===================================================================== */
+
+[dir="rtl"]{ text-align: right; }
+[dir="rtl"] body{ font-feature-settings: "kern" 1; }
+
+/* header */
+[dir="rtl"] .topbar-left, [dir="rtl"] .topbar-right{ flex-direction:row-reverse; }
+[dir="rtl"] .main-nav .container{ flex-direction:row-reverse; }
+[dir="rtl"] .nav-links{ flex-direction:row-reverse; }
+[dir="rtl"] .nav-tools{ flex-direction:row-reverse; }
+[dir="rtl"] .dropdown-menu{ text-align:right; }
+[dir="rtl"] .offcanvas-header{ flex-direction:row-reverse; }
+
+/* hero */
+[dir="rtl"] .hero .container{ direction:rtl; }
+[dir="rtl"] .hero-visual{ transform:scaleX(-1); }
+[dir="rtl"] .hero-visual .float-card{ transform:scaleX(-1); }
+[dir="rtl"] .hero-actions{ flex-direction:row-reverse; justify-content:flex-end; }
+[dir="rtl"] .hero-editorial .row{ direction:rtl; }
+
+/* breadcrumb & arrows */
+[dir="rtl"] .breadcrumb{ flex-direction:row-reverse; justify-content:flex-end; }
+[dir="rtl"] .icon-arrow{ transform:scaleX(-1); }
+[dir="rtl"] .quick-actions{ flex-direction:row-reverse; }
+[dir="rtl"] .testi-controls{ flex-direction:row-reverse; }
+[dir="rtl"] .stat-row, [dir="rtl"] .grid-3, [dir="rtl"] .grid-4{ direction:rtl; }
+
+/* forms */
+[dir="rtl"] .form-check{ flex-direction:row-reverse; }
+[dir="rtl"] .newsletter-form, [dir="rtl"] .footer-newsletter{ flex-direction:row-reverse; }
+[dir="rtl"] .form-label{ text-align:right; }
+
+/* footer */
+[dir="rtl"] .footer-grid{ text-align:right; }
+[dir="rtl"] .footer-bottom{ flex-direction:row-reverse; }
+[dir="rtl"] .footer-bottom .legal-links{ flex-direction:row-reverse; }
+[dir="rtl"] .social-row{ flex-direction:row-reverse; }
+
+/* misc */
+[dir="rtl"] .back-to-top{ inset-inline-end:auto; inset-inline-start:1.6rem; }
+[dir="rtl"] .offer-banner{ direction:rtl; }
+[dir="rtl"] .toolbar{ flex-direction:row-reverse; }
+[dir="rtl"] .tabs-nav{ flex-direction:row-reverse; }
+[dir="rtl"] .author-box{ flex-direction:row-reverse; text-align:right; }
+[dir="rtl"] .value-card{ flex-direction:row-reverse; text-align:right; }
+[dir="rtl"] .share-row{ flex-direction:row-reverse; }
+[dir="rtl"] .process-step{ text-align:center; }
+
+/* Arabic / Hebrew are typically set at a slightly larger size for parity */
+[dir="rtl"]:lang(ar), [dir="rtl"]:lang(he){ font-size:1.03em; }

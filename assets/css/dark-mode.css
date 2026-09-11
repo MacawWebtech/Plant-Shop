@@ -1,0 +1,97 @@
+/* =====================================================================
+   assets/css/dark-mode.css
+   Complete dark theme. Applied when <html data-theme="dark">, which
+   main.js sets from localStorage('fernleigh-theme') or, if the user has
+   never chosen, from prefers-color-scheme. The media query below covers
+   the same "system default, no explicit choice yet" case before JS runs,
+   so there is no flash of the wrong theme.
+   ===================================================================== */
+
+@media (prefers-color-scheme: dark){
+  html:not([data-theme="light"]){
+    --primary-color:#5B9C7E;
+    --primary-color-dark:#3F7A61;
+    --secondary-color:#8FAE8F;
+    --light-sage:#233129;
+    --light-bg:#141B16;
+    --warm-beige:#241E17;
+    --accent-color:#7BC29A;
+    --accent-color-dark:#5FA37E;
+    --dark-text:#EFEAE0;
+    --light-text:#101610;
+    --gold:#9CC98C;
+
+    --color-bg: var(--light-bg);
+    --color-surface:#1B231D;
+    --color-surface-alt: var(--light-sage);
+    --color-surface-warm: var(--warm-beige);
+    --color-text: var(--dark-text);
+    --color-text-muted:#A9B6A9;
+    --color-heading:#F2EEE3;
+    --color-border: rgba(239,234,224,0.12);
+    --color-border-strong: rgba(239,234,224,0.24);
+    --color-primary: var(--primary-color);
+    --color-primary-contrast:#0E140F;
+    --color-accent: var(--accent-color);
+    --color-focus:#9CC98C;
+    --shadow-sm: 0 .25rem .75rem -0.4rem rgba(0,0,0,0.5);
+    --shadow-md: 0 1rem 2.4rem -0.9rem rgba(0,0,0,0.6);
+    --shadow-lg: 0 1.8rem 4rem -1.4rem rgba(0,0,0,0.7);
+    color-scheme: dark;
+    --bs-body-bg: var(--color-bg);
+    --bs-body-color: var(--color-text);
+    --bs-primary: var(--primary-color);
+    --bs-primary-rgb: 91,156,126;
+    --bs-border-color: var(--color-border-strong);
+    --bs-emphasis-color: var(--color-heading);
+  }
+}
+
+html[data-theme="dark"]{
+  --primary-color:#5B9C7E;
+  --primary-color-dark:#3F7A61;
+  --secondary-color:#8FAE8F;
+  --light-sage:#233129;
+  --light-bg:#141B16;
+  --warm-beige:#241E17;
+  --accent-color:#7BC29A;
+  --accent-color-dark:#5FA37E;
+  --dark-text:#EFEAE0;
+  --light-text:#101610;
+  --gold:#9CC98C;
+
+  --color-bg: var(--light-bg);
+  --color-surface:#1B231D;
+  --color-surface-alt: var(--light-sage);
+  --color-surface-warm: var(--warm-beige);
+  --color-text: var(--dark-text);
+  --color-text-muted:#A9B6A9;
+  --color-heading:#F2EEE3;
+  --color-border: rgba(239,234,224,0.12);
+  --color-border-strong: rgba(239,234,224,0.24);
+  --color-primary: var(--primary-color);
+  --color-primary-contrast:#0E140F;
+  --color-accent: var(--accent-color);
+  --color-focus:#9CC98C;
+  --shadow-sm: 0 .25rem .75rem -0.4rem rgba(0,0,0,0.5);
+  --shadow-md: 0 1rem 2.4rem -0.9rem rgba(0,0,0,0.6);
+  --shadow-lg: 0 1.8rem 4rem -1.4rem rgba(0,0,0,0.7);
+  color-scheme: dark;
+
+  --bs-body-bg: var(--color-bg);
+  --bs-body-color: var(--color-text);
+  --bs-primary: var(--primary-color);
+  --bs-primary-rgb: 91,156,126;
+  --bs-border-color: var(--color-border-strong);
+  --bs-emphasis-color: var(--color-heading);
+}
+
+/* component-level touch-ups that need more than a token swap */
+html[data-theme="dark"] .site-header{ background: var(--color-bg); }
+html[data-theme="dark"] .hero{ background: linear-gradient(170deg, var(--light-sage) 0%, var(--light-bg) 60%); }
+html[data-theme="dark"] .float-card{ background: var(--color-surface); }
+html[data-theme="dark"] .offer-banner .offer-copy{ background: linear-gradient(100deg, var(--accent-color-dark) 45%, transparent 100%); }
+html[data-theme="dark"] .cat-card .overlay{ background:linear-gradient(0deg,rgba(0,0,0,.9) 0%, rgba(0,0,0,.2) 55%, transparent 75%); }
+html[data-theme="dark"] .form-control, html[data-theme="dark"] .form-select{ background: var(--color-surface); }
+html[data-theme="dark"] .form-success{ background: var(--color-surface-alt); }
+html[data-theme="dark"] .navbar-toggler{ filter:none; }
