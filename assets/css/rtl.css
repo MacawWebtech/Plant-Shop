@@ -1,0 +1,338 @@
+/* =====================================================================
+   assets/css/rtl.css
+   Activated by <html dir="rtl">. Handles the cases style.css's logical
+   properties (margin-inline, inset-inline-start, border-inline-start,
+   text-align:start, etc.) don't already cover on their own — mirrored
+   compositions, directional icons, and a few physical-property leftovers.
+   Compatible with Arabic and Hebrew layouts.
+   ===================================================================== */
+
+[dir="rtl"]{ text-align: right; }
+[dir="rtl"] body{ font-feature-settings: "kern" 1; }
+
+/* header */
+[dir="rtl"] .topbar-left, [dir="rtl"] .topbar-right{ flex-direction:row-reverse; }
+[dir="rtl"] .main-nav .container{ flex-direction:row-reverse; }
+[dir="rtl"] .nav-links{ flex-direction:row-reverse; }
+[dir="rtl"] .nav-tools{ flex-direction:row-reverse; }
+[dir="rtl"] .dropdown-menu{ text-align:right; }
+[dir="rtl"] .offcanvas-header{ flex-direction:row-reverse; }
+
+/* hero */
+[dir="rtl"] .hero .container{ direction:rtl; }
+[dir="rtl"] .hero-visual{ transform:scaleX(-1); }
+[dir="rtl"] .hero-visual .float-card{ transform:scaleX(-1); }
+[dir="rtl"] .hero-actions{ flex-direction:row-reverse; justify-content:flex-end; }
+[dir="rtl"] .hero-editorial .row{ direction:rtl; }
+
+/* breadcrumb & arrows */
+[dir="rtl"] .breadcrumb{ flex-direction:row-reverse; justify-content:flex-end; }
+[dir="rtl"] .icon-arrow{ transform:scaleX(-1); }
+[dir="rtl"] .quick-actions{ flex-direction:row-reverse; }
+[dir="rtl"] .testi-controls{ flex-direction:row-reverse; }
+[dir="rtl"] .stat-row, [dir="rtl"] .grid-3, [dir="rtl"] .grid-4{ direction:rtl; }
+
+/* forms */
+[dir="rtl"] .form-check{ flex-direction:row-reverse; }
+[dir="rtl"] .newsletter-form, [dir="rtl"] .footer-newsletter{ flex-direction:row-reverse; }
+[dir="rtl"] .form-label{ text-align:right; }
+
+/* footer */
+[dir="rtl"] .footer-grid{ text-align:right; }
+[dir="rtl"] .footer-bottom{ flex-direction:row-reverse; }
+[dir="rtl"] .footer-bottom .legal-links{ flex-direction:row-reverse; }
+[dir="rtl"] .social-row{ flex-direction:row-reverse; }
+
+/* misc */
+[dir="rtl"] .back-to-top{ inset-inline-end:auto; inset-inline-start:1.6rem; }
+[dir="rtl"] .offer-banner{ direction:rtl; }
+[dir="rtl"] .toolbar{ flex-direction:row-reverse; }
+[dir="rtl"] .tabs-nav{ flex-direction:row-reverse; }
+[dir="rtl"] .author-box{ flex-direction:row-reverse; text-align:right; }
+[dir="rtl"] .value-card{ flex-direction:row-reverse; text-align:right; }
+[dir="rtl"] .share-row{ flex-direction:row-reverse; }
+[dir="rtl"] .process-step{ text-align:center; }
+
+/* Arabic / Hebrew are typically set at a slightly larger size for parity */
+[dir="rtl"]:lang(ar), [dir="rtl"]:lang(he){ font-size:1.03em; }
+
+/* Global RTL toggle */
+.rtl-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  height: 34px;
+  padding: 0 .65rem;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: .78rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: opacity .2s ease, background-color .2s ease, color .2s ease;
+}
+.rtl-toggle:hover,
+.rtl-toggle:focus-visible {
+  opacity: .8;
+}
+
+
+/* ==========================================================
+   Global RTL toggle
+   Applies to every page, section, grid, form, footer and
+   responsive layout when html[dir="rtl"] is active.
+   ========================================================== */
+html[dir="rtl"],
+html.is-rtl,
+html[dir="rtl"] body,
+body.is-rtl {
+  direction: rtl;
+}
+
+/* Let the browser's logical flow handle all normal text/layout. */
+html[dir="rtl"] body,
+html[dir="rtl"] main,
+html[dir="rtl"] section,
+html[dir="rtl"] footer,
+html[dir="rtl"] header,
+html[dir="rtl"] nav,
+html[dir="rtl"] .container,
+html[dir="rtl"] .container-fluid,
+html[dir="rtl"] .row,
+html[dir="rtl"] [class*="grid"],
+html[dir="rtl"] [class*="flex"] {
+  direction: rtl;
+}
+
+/* Text and form controls */
+html[dir="rtl"] p,
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6,
+html[dir="rtl"] li,
+html[dir="rtl"] label,
+html[dir="rtl"] input,
+html[dir="rtl"] textarea,
+html[dir="rtl"] select,
+html[dir="rtl"] .form-control {
+  text-align: right;
+}
+
+html[dir="rtl"] input::placeholder,
+html[dir="rtl"] textarea::placeholder {
+  text-align: right;
+}
+
+/* Lists and common navigation */
+html[dir="rtl"] ul,
+html[dir="rtl"] ol {
+  padding-right: 2rem;
+  padding-left: 0;
+}
+
+html[dir="rtl"] .navbar-nav,
+html[dir="rtl"] .nav-links,
+html[dir="rtl"] .menu,
+html[dir="rtl"] .nav-menu {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* Preserve media/icon orientation. */
+html[dir="rtl"] img,
+html[dir="rtl"] video,
+html[dir="rtl"] iframe,
+html[dir="rtl"] svg,
+html[dir="rtl"] i,
+html[dir="rtl"] .icon {
+  direction: ltr;
+}
+
+/* Toggle itself remains easy to read and click. */
+.rtl-toggle {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  cursor: pointer;
+  direction: ltr;
+  text-align: center;
+}
+
+/* Bootstrap-style rows: reverse visual order in RTL. */
+html[dir="rtl"] .row {
+  --bs-gutter-x: 1.5rem;
+}
+
+/* Common directional utility overrides */
+html[dir="rtl"] .text-start { text-align: right !important; }
+html[dir="rtl"] .text-end { text-align: left !important; }
+html[dir="rtl"] .float-start { float: right !important; }
+html[dir="rtl"] .float-end { float: left !important; }
+
+
+/* ==========================================================
+   HEADER — full RTL mirror
+   ========================================================== */
+html[dir="rtl"] .site-header,
+html[dir="rtl"] .topbar,
+html[dir="rtl"] .main-nav,
+html[dir="rtl"] .main-nav > .container {
+  direction: rtl;
+}
+
+html[dir="rtl"] .main-nav > .container {
+  display: flex;
+  align-items: center;
+}
+
+html[dir="rtl"] .main-nav .navbar-brand {
+  margin-inline-start: .5rem;
+  margin-inline-end: 0;
+}
+
+html[dir="rtl"] .main-nav .nav-links {
+  direction: rtl;
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .main-nav .nav-tools {
+  direction: rtl;
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .main-nav .nav-tools .header-cta{
+  order:0;
+}
+
+html[dir="rtl"] .main-nav .nav-tools .navbar-toggler {
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+html[dir="rtl"] .main-nav .dropdown-menu {
+  right: 0;
+  left: auto;
+  text-align: right;
+}
+
+html[dir="rtl"] .mobile-drawer,
+html[dir="rtl"] .mobile-drawer .offcanvas-header,
+html[dir="rtl"] .mobile-drawer .offcanvas-body,
+html[dir="rtl"] .drawer-nav {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .mobile-drawer .drawer-sub {
+  padding-right: 1rem;
+  padding-left: 0;
+}
+
+html[dir="rtl"] .topbar > .container {
+  direction: rtl;
+}
+
+html[dir="rtl"] .topbar-left,
+html[dir="rtl"] .topbar-right {
+  direction: rtl;
+}
+
+/* ==========================================================
+   FINAL HEADER RTL FIX
+   Bootstrap's order-lg-3 / mx-auto utilities otherwise keep
+   the header visually in the LTR arrangement. Explicitly set
+   the three header groups so RTL is deterministic.
+   ========================================================== */
+@media (min-width: 992px) {
+  html[dir="rtl"] .main-nav > .container {
+    direction: rtl !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+  }
+
+  html[dir="rtl"] .main-nav > .container > .navbar-brand {
+    order: 3 !important;
+    margin-inline-start: 0 !important;
+    margin-inline-end: 0 !important;
+  }
+
+  html[dir="rtl"] .main-nav > .container > .nav-links {
+    order: 2 !important;
+    flex-direction: row-reverse !important;
+    margin-inline-start: auto !important;
+    margin-inline-end: auto !important;
+    padding-inline: 0 !important;
+  }
+
+  html[dir="rtl"] .main-nav > .container > .nav-tools {
+    order: 1 !important;
+    flex-direction: row !important;
+    margin-inline-start: 0 !important;
+    margin-inline-end: 0 !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  html[dir="rtl"] .main-nav > .container {
+    direction: rtl !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+  }
+
+  html[dir="rtl"] .main-nav > .container > .navbar-brand {
+    order: 2 !important;
+    margin-inline-start: auto !important;
+    margin-inline-end: 0 !important;
+  }
+
+  html[dir="rtl"] .main-nav > .container > .nav-tools {
+    order: 1 !important;
+    flex-direction: row !important;
+    margin-inline-start: 0 !important;
+    margin-inline-end: auto !important;
+  }
+
+  html[dir="rtl"] .main-nav > .container > .nav-links {
+    display: none !important;
+  }
+}
+
+/* Header text and dropdowns must follow the RTL reading direction. */
+html[dir="rtl"] .main-nav,
+html[dir="rtl"] .main-nav .navbar-nav,
+html[dir="rtl"] .main-nav .nav-item,
+html[dir="rtl"] .main-nav .nav-link,
+html[dir="rtl"] .main-nav .dropdown-menu,
+html[dir="rtl"] .topbar,
+html[dir="rtl"] .topbar .container {
+  direction: rtl !important;
+}
+
+html[dir="rtl"] .main-nav .dropdown-menu {
+  inset-inline-start: auto !important;
+  inset-inline-end: 0 !important;
+  text-align: right !important;
+}
+
+/* Compact RTL control on mobile header */
+@media (max-width: 767.98px) {
+  .rtl-toggle {
+    min-width: 34px;
+    width: 34px;
+    height: 28px;
+    padding: 0 .35rem;
+    font-size: .68rem;
+    line-height: 1;
+    border-radius: 5px;
+  }
+}
